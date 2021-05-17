@@ -1,5 +1,7 @@
 package com.greenfoxacademy;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class Main {
 
         }
 
+        System.out.println("////////////////////");
         // string tömb bejárása iterációval
         System.out.println("////////////////////");
         String[] names = {"Bela", "János", "Éva"};
@@ -37,6 +40,43 @@ public class Main {
 
         }
 
+        System.out.println("////////////////////");
+        //többdimenziós tömb
+        int[][] table = new int[4][4];
+        for (int i = 0; i < table.length; i++) {
+            System.out.println(Arrays.toString(table[i]));
+
+        }
+
+        System.out.println("////////////////////");
+        //küönböző hosszúságú tömbök tömbje
+        int[][] differentLenghtArray = new int[4][];
+        for (int i = 0; i < differentLenghtArray.length; i++) {
+            differentLenghtArray[i] = new int[i + 1];
+
+        }
+
+        for (int i = 0; i < differentLenghtArray.length; i++) {
+            System.out.println(Arrays.toString(differentLenghtArray[i]));
+
+        }
+
+        System.out.println("////////////////////");
+
+        int[][] multiDimensionArray = {
+                {1, 2, 3, 45, 67, 89},
+                {4, 5, 6, 7},
+                {7, 8, 9, 11, 13,}
+        };
+
+        for (int i = 0; i < multiDimensionArray.length; i++) {
+            System.out.println(Arrays.toString(multiDimensionArray[i]));
+        }
+        System.out.println("////////////////////");
+        multiDimensionArray[1][1] = 456;
+        for (int i = 0; i < multiDimensionArray.length; i++) {
+            System.out.println(Arrays.toString(multiDimensionArray[i]));
+        }
 
     }
 }
