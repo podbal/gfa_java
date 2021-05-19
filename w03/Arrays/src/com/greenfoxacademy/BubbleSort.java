@@ -11,6 +11,7 @@ public class BubbleSort {
         //Arrays.sort(numbers); //csak kipróbálásra kellet
         //System.out.println("Tömb sorba rendezve: " + Arrays.toString(numbers));
 
+        /* Basic BubbleSort
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 0; j < numbers.length - i - 1; j++) {
                 int first = numbers[j];
@@ -19,6 +20,19 @@ public class BubbleSort {
                 if (first > second) {
                     numbers[j] = second;
                     numbers[j + 1] = first;
+                }
+            }
+        }
+        System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
+        */
+
+        /* optimalizált SWAP, 1 egy változóval */
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = 0; j < numbers.length - i - 1; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
                 }
             }
         }
