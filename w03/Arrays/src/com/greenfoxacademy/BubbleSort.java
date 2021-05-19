@@ -15,6 +15,7 @@ public class BubbleSort {
             for (int j = 0; j < numbers.length - i - 1; j++) {
                 int first = numbers[j];
                 int second = numbers[j + 1];
+                System.out.println("Iteration first: " + first + " second: " + second);
                 if (first > second) {
                     numbers[j] = second;
                     numbers[j + 1] = first;
