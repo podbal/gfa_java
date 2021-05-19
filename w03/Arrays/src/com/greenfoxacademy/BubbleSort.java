@@ -26,7 +26,7 @@ public class BubbleSort {
         System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
         */
 
-        /* optimalizált SWAP, 1 egy változóval */
+        /* optimalizált SWAP, 1 egy változóval
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = 0; j < numbers.length - i - 1; j++) {
                 if (numbers[j] > numbers[j + 1]) {
@@ -34,6 +34,24 @@ public class BubbleSort {
                     numbers[j] = numbers[j + 1];
                     numbers[j + 1] = temp;
                 }
+            }
+        }
+        System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
+        */
+
+        /* optimalizált SWAP, 1 egy változóval */
+        for (int i = 0; i < numbers.length - 1; i++) {
+            boolean wasSwap = false;
+            for (int j = 0; j < numbers.length - i - 1; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                    wasSwap = true;
+                }
+            }
+            if (!wasSwap) {
+                break; //utolsó lépésnél ha több elem is sorba van már rendezve akkor kilép további ellenőrzés nélkül
             }
         }
         System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
