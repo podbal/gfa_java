@@ -78,5 +78,42 @@ public class Main {
             System.out.println(Arrays.toString(multiDimensionArray[i]));
         }
 
+        System.out.println("////////////////////");
+        int[][] arrayReferenceEx = new int[3][];
+        int[] firstArray = new int[4];
+        int[] secondArray = {1, 2, 3, 4, 5, 6};
+        int[] thirdArray = new int[4];
+
+        arrayReferenceEx[0] = firstArray;
+        arrayReferenceEx[1] = secondArray;
+        arrayReferenceEx[2] = thirdArray;
+
+        for (int i = 0; i < arrayReferenceEx.length; i++) {
+            System.out.println(Arrays.toString(arrayReferenceEx[i]));
+        }
+
+        System.out.println("////////////////////");
+        //mindegy, hogy a hivatkozott tömb elemét változtatom meg
+        //vagy pedig a többdimenziós tömbön keresztül hovatkozva a tömb elemére
+
+        secondArray[2] = -1111;
+        thirdArray[2] = -1111;
+        for (int i = 0; i < arrayReferenceEx.length; i++) {
+            System.out.println(Arrays.toString(arrayReferenceEx[i]));
+        }
+
+        System.out.println("////////////////////");
+        arrayReferenceEx[1][2] = -2222;
+        arrayReferenceEx[2][2] = -2222;
+        /* arrayReferenceEx[3][3] = -2222; !!!
+        !!!túlindexelt tömb, 3 elemű tömb 4. elemére próbáltunk meg hivatkozni
+        arrayReferenceEx[3] <- 4. elem, ez futásidejű hibát eredményez!!!
+         */
+
+        for (int i = 0; i < arrayReferenceEx.length; i++) {
+            System.out.println(Arrays.toString(arrayReferenceEx[i]));
+        }
+
+
     }
 }
