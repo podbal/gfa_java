@@ -40,21 +40,23 @@ public class BubbleSort {
         */
 
         /* optimalizált SWAP, 1 egy változóval */
-        for (int i = 0; i < numbers.length - 1; i++) {
-            boolean wasSwap = false;
-            for (int j = 0; j < numbers.length - i - 1; j++) {
+        int i, j;
+        int lastSwap = numbers.length;
+        do {
+            int newN = 0;
+            for (j = 0; j < lastSwap - 1; j++) {
+                System.out.println("J: " + numbers[j] + " J+1: " + numbers[j + 1]);
                 if (numbers[j] > numbers[j + 1]) {
                     int temp = numbers[j];
                     numbers[j] = numbers[j + 1];
                     numbers[j + 1] = temp;
-                    wasSwap = true;
+                    newN = j;
                 }
             }
-            if (!wasSwap) {
-                break; //utolsó lépésnél ha több elem is sorba van már rendezve akkor kilép további ellenőrzés nélkül
-            }
-        }
-        System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
+            lastSwap = newN;
+        } while (lastSwap > 1);
 
+        System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
     }
 }
+
