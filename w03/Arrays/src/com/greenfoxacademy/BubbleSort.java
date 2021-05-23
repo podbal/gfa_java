@@ -45,15 +45,17 @@ public class BubbleSort {
         do {
             int newN = 0;
             for (int i = 1; i <= lastSwap - 1; i++) {
-                System.out.println("I-1: " + numbers[i - 1] + " I: " + numbers[i]);
+                System.out.println("i " + i + " I-1: " + numbers[i - 1] + " I: " + numbers[i]);
                 if (numbers[i - 1] > numbers[i]) {
                     int tmp = numbers[i - 1];
                     numbers[i - 1] = numbers[i];
                     numbers[i] = tmp;
                     newN = i;
+                    System.out.println(newN);
                 }
             }
             lastSwap = newN;
+            System.out.println(lastSwap);
         } while (lastSwap >= 1);
 
         System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
