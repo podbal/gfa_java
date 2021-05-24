@@ -51,11 +51,11 @@ public class BubbleSort {
                     numbers[i - 1] = numbers[i];
                     numbers[i] = tmp;
                     newN = i;
-                    System.out.println(newN);
+                    System.out.println("newN:" + newN);
                 }
             }
             lastSwap = newN;
-            System.out.println(lastSwap);
+            System.out.println("lastSwap:" + lastSwap);
         } while (lastSwap >= 1);
 
         System.out.println("BubbleSort rendezés: " + Arrays.toString(numbers));
