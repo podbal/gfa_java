@@ -43,7 +43,7 @@ public class BubbleSort {
 
         int lastSwap = numbers.length; //ciklus max futása a tömb hosszával egyenlő
         do {
-            int newN = 0; //eddig futott a for ciklus, itt volt az utolsó swap, nem kell ennél tovább futtatni a ciklust
+            int newLastSwap = 0; //eddig futott a for ciklus, itt volt az utolsó swap, nem kell ennél tovább futtatni a ciklust
             for (int i = 1; i <= lastSwap - 1; i++) { //a tömb első elemétől a tömb-1 szer fut a ciklus
                 System.out.println("i " + i + " I-1: " + numbers[i - 1] + " I: "
                         + numbers[i]); //ciklusszám I-1 és I tömbelemek állapotok
@@ -51,11 +51,11 @@ public class BubbleSort {
                     int tmp = numbers[i - 1]; // csere/swap
                     numbers[i - 1] = numbers[i];
                     numbers[i] = tmp;
-                    newN = i; //itt volt az utolsó swap, ennél többször már nem kell futnia a következő for cilkusnak
-                    System.out.println("newN:" + newN); //newN állapota
+                    newLastSwap = i; //itt volt az utolsó swap, ennél többször már nem kell futnia a következő for cilkusnak
+                    System.out.println("newLastSwap:" + newLastSwap); //newLastSwap állapota
                 }
             }
-            lastSwap = newN; //utolsó swap az i-edik futásnál, max ennyiszer kell már csak futnia a for-nak
+            lastSwap = newLastSwap; //utolsó swap az i-edik futásnál, max ennyiszer kell már csak futnia a for-nak
             System.out.println("lastSwap:" + lastSwap); //lastSwap állapota
         } while (lastSwap >= 1); //amíg lastswap kisebb vagy egyenlő mint 1, tehát az utolsó swap 0 vagy 1-nél volt
 
