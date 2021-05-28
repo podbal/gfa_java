@@ -9,16 +9,28 @@ public class Main {
     void main() { //main metodus
         char[][] board = new char[3][3];
         printBoard(board);
-        step(board, 4, 1, true);
+        System.out.println(isCellEmpty(board, 1, 1));
+        step(board, 1, 1, true);
         printBoard(board);
+        System.out.println(isCellEmpty(board, 1, 1));
     }
 
     boolean step(char[][] board, int cordX, int cordY, boolean isXSymbol) { //lépés a board-on
-        if (cordX < board.length && cordY < board[cordX].length) {
+        if ((cordX >= board.length || cordX < 0) && (cordY >= board[cordX].length || cordY < 0)) {
+            return false;
+        }
+
+        boolean cellEmpty = isCellEmpty(board, cordX, cordX);
+        if (cellEmpty) {
             board[cordX][cordY] = isXSymbol ? 'X' : 'O';
             return true;
         }
+
         return false;
+    }
+
+    boolean isCellEmpty(char[][] board, int cordX, int cordY) {
+        return board[cordX][cordY] == 0;
     }
 
     private void printBoard(char[][] board) { //board rajzolása
